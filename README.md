@@ -12,7 +12,7 @@ Make a Google spreadsheet with three columns and name them "Name", "Mail" and "P
  textFieldForSource. You can override this by adding more columns and you can access to those columns in the method "getContactsData" 
  with contact["YOUROWNTHING"].string!, for example 
  ``` contact["Home Adress"].string! ```
-![](Screen Shot 2019-05-26 at 8.16.02 PM)
+![](screenshot.png)
 
 # How to build
 1. Clone this repository 
