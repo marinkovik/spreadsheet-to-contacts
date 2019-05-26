@@ -7,6 +7,9 @@ Pods: Alamofire, SwiftyJSON, RealmSwift
 # Spreadsheet to contacts book
 Make a google spreadsheet with phone numbers and emails of your employees. Have their numbers in seperate application. 
 
+# Demo
+![](demo.gif)
+
 # How to use
 Make a Google spreadsheet with three columns and name them "Name", "Mail" and "Phone Number". Get shareable link and pass the link into
  textFieldForSource. You can override this by adding more columns and you can access to those columns in the method "getContactsData" 
