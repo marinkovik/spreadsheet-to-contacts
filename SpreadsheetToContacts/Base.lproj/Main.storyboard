@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mAh-Oy-4fR">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SpreadsheetToContacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fva-t3-wjG">
+                                <rect key="frame" x="137" y="430" width="100" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Get contacts">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="goToContactButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="38b-GF-DKk"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cF7-dG-nkA">
+                                <rect key="frame" x="115" y="363" width="144" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Spreadsheet link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6TO-aO-asV">
+                                <rect key="frame" x="123" y="340" width="128" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="iVV-GY-jre"/>
+                    <connections>
+                        <outlet property="textFieldForSource" destination="cF7-dG-nkA" id="G25-vk-5lY"/>
+                        <segue destination="Feo-3x-g7r" kind="push" identifier="goToContactSegue" id="Ilc-Pa-052"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1156" y="35.467980295566505"/>
+        </scene>
+        <!--Contacts Table View Controller-->
+        <scene sceneID="Sug-BZ-rRN">
+            <objects>
+                <tableViewController id="Feo-3x-g7r" customClass="ContactsTableViewController" customModule="SpreadsheetToContacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Td0-gN-pD4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellForContact" rowHeight="80" id="rs9-S9-Rru" customClass="ContactCell" customModule="SpreadsheetToContacts" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rs9-S9-Rru" id="YbA-o1-J1y">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.666666666666671"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eHT-Iy-zQF">
+                                            <rect key="frame" x="9.9999999999999964" y="9.9999999999999964" width="59.666666666666657" height="59.666666666666657"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="eHT-Iy-zQF" secondAttribute="height" multiplier="1:1" id="0qp-iW-onG"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LxP-Ve-bBz">
+                                            <rect key="frame" x="79.666666666666671" y="29.333333333333329" width="41.666666666666671" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="eHT-Iy-zQF" firstAttribute="centerY" secondItem="YbA-o1-J1y" secondAttribute="centerY" id="2r4-YC-SFQ"/>
+                                        <constraint firstAttribute="bottom" secondItem="eHT-Iy-zQF" secondAttribute="bottom" constant="10" id="9r4-bD-TEu"/>
+                                        <constraint firstItem="eHT-Iy-zQF" firstAttribute="leading" secondItem="YbA-o1-J1y" secondAttribute="leading" constant="10" id="H9m-VA-glK"/>
+                                        <constraint firstItem="eHT-Iy-zQF" firstAttribute="top" secondItem="YbA-o1-J1y" secondAttribute="top" constant="10" id="HPR-cm-24e"/>
+                                        <constraint firstItem="LxP-Ve-bBz" firstAttribute="centerY" secondItem="YbA-o1-J1y" secondAttribute="centerY" id="kaQ-MS-8hI"/>
+                                        <constraint firstItem="LxP-Ve-bBz" firstAttribute="leading" secondItem="eHT-Iy-zQF" secondAttribute="trailing" constant="10" id="pFz-6H-bmu"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="contactImageView" destination="eHT-Iy-zQF" id="qS1-Qe-zTf"/>
+                                    <outlet property="contactNameLabel" destination="LxP-Ve-bBz" id="kd1-50-rfx"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Feo-3x-g7r" id="G7M-xJ-IYv"/>
+                            <outlet property="delegate" destination="Feo-3x-g7r" id="TeC-1z-yoo"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="e1N-6t-FdW">
+                        <barButtonItem key="rightBarButtonItem" title="Delete Contacts" id="lW7-YO-HP8">
+                            <connections>
+                                <action selector="deleteContactsButtonClicked:" destination="Feo-3x-g7r" id="25B-pa-zjF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="ac3-2u-FUp" kind="show" identifier="goToContactInfo" id="a43-RX-wuy"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OB9-3I-9tb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1976.8" y="35.467980295566505"/>
+        </scene>
+        <!--Contact Info View Controller-->
+        <scene sceneID="3jZ-9X-tGB">
+            <objects>
+                <viewController id="ac3-2u-FUp" customClass="ContactInfoViewController" customModule="SpreadsheetToContacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="err-mM-u9Q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jb4-E6-SNk">
+                                <rect key="frame" x="55" y="107" width="265" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="CQo-Jm-Sji"/>
+                                    <constraint firstAttribute="width" constant="150" id="ZIw-8e-UYC"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfM-DK-3mP">
+                                <rect key="frame" x="112" y="370" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="25"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="contactPhoneButtonClicked:" destination="ac3-2u-FUp" eventType="touchUpInside" id="DPd-zK-6H3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRq-g6-D3g">
+                                <rect key="frame" x="212" y="370" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="25"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="contactEmailButtonClicked:" destination="ac3-2u-FUp" eventType="touchUpInside" id="DKv-fR-cCa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Call" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Qh-c2-xvJ">
+                                <rect key="frame" x="123" y="427" width="29" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Send e-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9V-4L-mjm">
+                                <rect key="frame" x="191" y="428" width="92" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAs-iL-3F8">
+                                <rect key="frame" x="16" y="457" width="112" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94E-K7-HaO">
+                                <rect key="frame" x="16" y="514" width="49" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZY3-Ht-W8p">
+                                <rect key="frame" x="112" y="341" width="150" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8R9-OR-Tii">
+                                <rect key="frame" x="16" y="476" width="206" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="phoneTextFieldEditingDidEnd:" destination="ac3-2u-FUp" eventType="editingDidEnd" id="OPG-33-EBp"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PrM-sQ-qz5">
+                                <rect key="frame" x="16" y="535" width="206" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="emailTextFieldEditingDidEnd:" destination="ac3-2u-FUp" eventType="editingDidEnd" id="FuB-v6-Zco"/>
+                                </connections>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="emailIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="GFZ-6B-X2d">
+                                <rect key="frame" x="221" y="379" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="phoneImagePng.png" translatesAutoresizingMaskIntoConstraints="NO" id="HlR-U4-qCH">
+                                <rect key="frame" x="121" y="379" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jb4-E6-SNk" firstAttribute="leading" secondItem="Svz-Wq-0BZ" secondAttribute="leading" constant="55" id="0s4-he-bkk"/>
+                            <constraint firstItem="jb4-E6-SNk" firstAttribute="top" secondItem="Svz-Wq-0BZ" secondAttribute="top" constant="55" id="D5X-b8-Yv5"/>
+                            <constraint firstItem="jb4-E6-SNk" firstAttribute="top" secondItem="Svz-Wq-0BZ" secondAttribute="top" constant="55" id="hPn-Ld-ppg"/>
+                            <constraint firstItem="Svz-Wq-0BZ" firstAttribute="trailing" secondItem="jb4-E6-SNk" secondAttribute="trailing" constant="55" id="rvr-La-ovv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Svz-Wq-0BZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="contactEmailTextField" destination="PrM-sQ-qz5" id="x6M-GT-qhC"/>
+                        <outlet property="contactInfoImage" destination="jb4-E6-SNk" id="bKk-TD-ONM"/>
+                        <outlet property="contactNameLabel" destination="ZY3-Ht-W8p" id="aCP-PX-z1W"/>
+                        <outlet property="contactPhoneTextField" destination="8R9-OR-Tii" id="7yR-S0-vAd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qfu-AY-AUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2772" y="37.684729064039409"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fHZ-Ab-TyI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mAh-Oy-4fR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ast-jy-Cqe">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="xft-Ty-g4z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nBC-kz-vOC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="216.80000000000001" y="35.532233883058474"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="emailIcon.png" width="50" height="50"/>
+        <image name="phoneImagePng.png" width="914" height="980"/>
+    </resources>
+</document>

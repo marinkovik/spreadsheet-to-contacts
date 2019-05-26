@@ -1,0 +1,6 @@
+framework module Pods_SpreadsheetToContacts {
+  umbrella header "Pods-SpreadsheetToContacts-umbrella.h"
+
+  export *
+  module * { export * }
+}
