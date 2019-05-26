@@ -13,6 +13,9 @@ Make a Google spreadsheet with three columns and name them "Name", "Mail" and "P
  with contact["YOUROWNTHING"].string!, for example 
  ``` contact["Home Adress"].string! ```
 ![](screenshot1.png)
+The contacts will be available without internet and even after terminate the application. There is feature for updating the users' phone and mails. The location of database for debugging and testing is ```Realm.Configuration.defaultConfiguration.fileURL```
+
+
 
 # How to build
 1. Clone this repository 
