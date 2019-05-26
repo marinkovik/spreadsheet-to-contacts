@@ -8,7 +8,7 @@ Pods: Alamofire, SwiftyJSON, RealmSwift
 Make a google spreadsheet with phone numbers and emails of your employees. Have their numbers in seperate application. 
 
 # Demo
-![](demo.gif)
+![](https://media.giphy.com/media/ZBVoWeoZzHI5az703V/giphy.gif)
 
 # How to use
 Make a Google spreadsheet with three columns and name them "Name", "Mail" and "Phone Number". Get shareable link and pass the link into
